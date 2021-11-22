@@ -1,44 +1,22 @@
 # Backend
 ## 1. Outline
 ### 1.1. Introduction
-[![Build Status](https://github.com/samchon/backend/workflows/build/badge.svg)](https://github.com/samchon/backend/actions?query=workflow%3Abuild)
+[![Build Status](https://github.com/samchon/bbs-backend/workflows/build/badge.svg)](https://github.com/samchon/bbs-backend/actions?query=workflow%3Abuild)
 
-A template repository for the Typescript Backend Server using those libraries:
+An example project for the Typescript Backend Server who've implemented the BBS (Built-in Board System) using those libraries:
 
   - [NestJS](https://nestjs.com) and [**`nestia`**](https://github.com/samchon/nestia): Automatic SDK generator for NestJS
   - [TypeORM](https://typeorm.io) and [`safe-typeorm`](https://github.com/samchon/safe-typeorm): Helper of TypeORM in the compilation level
 
-Also, I've prepared lots of example backend projects based on this template project. Reading this [README.md](https://github.com/samchon/backend) document and traveling below example projects, you may understand how to develop the TypeScript backend server with the [Nestia](https://github.com/samchon/nestia) and [Safe-TypeORM](https://github.com/samchon/safe-typeorm).
-
-  - samchon/academic-backend: preparing...
-  - [samchon/bbs-backend](https://github.com/samchon/bbs-backend): Built-in Board System
-
 If you wanna new type of example backend project or you've something to ask me about the TypeScript backend server development, don't mine anything and just write an issue for help. Then I will support you.
 
-### 1.2. Specializations
-Transform this template project to be yours.
+### 1.2. Built-in Board System
+This example repository has implemented a simple BBS (Built-in Bullet System) as an example project. This BBS is a typical subject for students who want to be a backend server developer. Therefore, I think this repository and the subject BBS would be the good reference for you. 
 
-When you've created a new backend project through this template project, you can specialize it to be suitable for you by changing some words. Replace below words through IDE specific function like `Edit > Replace in Files` (*Ctrl + Shift + H*), who've been supported by the VSCode.
+Reading this [README.md](https://github.com/samchon/bbs-backend) document, travel the source code. Also, for someone who wants to learn from the much complex example than this [`@samchon/bbs-backend`](https://github.com/samchon/bbs-backend), I've prepared much detailed backend projects like below:
 
-| Before          | After
-|-----------------|----------------------------------------
-| ${ORGANIZATION} | Your account or corporation name
-| ${PROJECT}      | Your own project name
-| ${AUTHOR}       | Author name
-| test_db_schema  | Database schema to connnect
-| https://github.com/samchon/backend | Your repository URL
-
-After those replacements, you should specialize the [`src/Configuration.ts`](src/Configuration.ts), [.github/workflows/build.yml](.github/workflows/build.yml) files. Open those files and change constant values of these files to be suitable for your project. Also, open markdown files like this [README.md](README.md) and write your specific project story. Below is list of the markdown files.
-
-  - [.github/ISSUE_TEMPLATE/BUG_REPORT.md](.github/ISSUE_TEMPLATE/BUG_REPORT.md)
-  - [.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md](.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md)
-  - [.github/ISSUE_TEMPLATE/QUESTION.md](.github/ISSUE_TEMPLATE/QUESTION.md)
-  - [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md)
-  - [README.md](README.md)
-  - [CODE_OF_CONNDUCT.md](CODE_OF_CONNDUCT.md)
-  - [CONTRIBUTING.md](CONTRIBUTING.md)
-  - [INTRASTRUCTURE.md](INTRASTRUCTURE.md)
-  - [LICENSE](LICENSE)
+  - samchon/acedemic-backend: preparing...
+  - *Send me PR (Pull Request) if you've implemented a good example*
 
 ### 1.3. Directories
 This template project has categorized directories like below:
@@ -86,13 +64,13 @@ After the installation, open a terminal and configure account and password to be
 > sudo mysqladmin -u root password 'root'
 > ```
 
-After the account configuration, connect to the MariaDB and create a new DB schema `test_db_schema`. Also, you should change the `sql_mode` options like below to enhance the strict grammer check for the safe development. 
+After the account configuration, connect to the MariaDB and create a new DB schema `bbs`. Also, you should change the `sql_mode` options like below to enhance the strict grammer check for the safe development. 
 
 For a representatively, the `ONLY_FULL_GROUP_BY` condition occurs a syntax error when non-aggregated field has been appeared in the `SELECT` statement who is using the `GROUP BY` statement.
 
 ```sql
 -- CREATE A NEW SCHEMA
-CREATE SCHEMA test_db_schema 
+CREATE SCHEMA bbs 
     DEFAULT CHARACTER SET utf8mb4 
     COLLATE utf8mb4_unicode_ci;
 
@@ -165,9 +143,9 @@ After those declarations, build the [SDK](#32-sdk) through the `npm run build:ap
   - Deploy to the Dev and Real servers.
 
 ### 3.2. SDK
-[`@${ORGANIZATION}/${PROJECT}`](https://github.com/samchon/backend) provides SDK (Software Development Kit) for convenience.
+[`@samchon/bbs-backend`](https://github.com/samchon/bbs-backend) provides SDK (Software Development Kit) for convenience.
 
-For the client developers who are connecting to this backend server, [`@${ORGANIZATION}/${PROJECT}`](https://github.com/samchon/backend) provides not API documents like the Swagger, but provides the API interaction library, one of the typical SDK (Software Development Kit) for the convenience.
+For the client developers who are connecting to this backend server, [`@samchon/bbs-backend`](https://github.com/samchon/bbs-backend) provides not API documents like the Swagger, but provides the API interaction library, one of the typical SDK (Software Development Kit) for the convenience.
 
 With the SDK, client developers never need to re-define the duplicated API interfaces. Just utilize the provided interfaces and asynchronous functions defined in the SDK. It would be much convenient than any other Rest API solutions.
 
@@ -429,11 +407,11 @@ List of the run commands defined in the [package.json](package.json) are like be
   - `test:update`: Test the non-distruptive update system
 
 ### 5.3. Github Action
-[![Build Status](https://github.com/samchon/backend/workflows/build/badge.svg)](https://github.com/samchon/backend/actions?query=workflow%3Abuild)
+[![Build Status](https://github.com/samchon/bbs-backend/workflows/build/badge.svg)](https://github.com/samchon/bbs-backend/actions?query=workflow%3Abuild)
 
 This backend project utilizes the Github Action to run the cloud CI (Continuous Integration) test whenever a commit or PR event occurs. The CI test starts from installing the backend server program to a clean Ubuntu system that nothing has been installed yet.
 
-You know what? All of CI processes, like installing required programs into the clean Ubuntu and compiling and running the Test Automation Program, are defined in the [`.github/workflows/build.yml`](.github/workflows/build.yml) script file. Also <font color="green">passing</font> or <font color="red">failure</font> expressed from the above [badge](https://github.com/samchon/backend/actions?query=workflow%3Abuild) represents outcome of the CI test.
+You know what? All of CI processes, like installing required programs into the clean Ubuntu and compiling and running the Test Automation Program, are defined in the [`.github/workflows/build.yml`](.github/workflows/build.yml) script file. Also <font color="green">passing</font> or <font color="red">failure</font> expressed from the above [badge](https://github.com/samchon/bbs-backend/actions?query=workflow%3Abuild) represents outcome of the CI test.
 
 ### 5.4. Related Repositories
 > Write the related repositories down.

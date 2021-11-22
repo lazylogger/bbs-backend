@@ -1,9 +1,9 @@
 ## BBS Models
 ## Outline
-ORM Models of the [`@${ORGANIZATION}/${PROJECT}`](https://github.com/samchon/backend).
+ORM Models of the [`@samchon/bbs-backend`](https://github.com/samchon/bbs-backend).
 
 ```bash
-npm install --save @${ORGANIZATION}/${PROJECT}-models
+npm install --save @samchon/bbs-backend-models
 ```
 
-![ERD](https://github.com/samchon/backend/raw/master/designs/erd.png)
+![ERD](https://github.com/samchon/bbs-backend/raw/master/designs/erd.png)

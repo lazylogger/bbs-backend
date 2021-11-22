@@ -1,20 +1,20 @@
 {
-  "name": "@samchon/${PROJECT}-models",
+  "name": "@samchon/bbs-backend-models",
   "version": "0.0.0",
-  "description": "${PROJECT} ORM Models",
+  "description": "bbs-backend ORM Models",
   "scripts": {
     "test": "node test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samchon/backend"
+    "url": "https://github.com/samchon/bbs-backend"
   },
-  "author": "${AUTHOR}",
+  "author": "samchon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samchon/backend/issues"
+    "url": "https://github.com/samchon/bbs-backend/issues"
   },
-  "homepage": "https://github.com/samchon/backend#readme",
+  "homepage": "https://github.com/samchon/bbs-backend#readme",
   "dependencies": {
     "safe-typeorm": "^0.2.4"
   }

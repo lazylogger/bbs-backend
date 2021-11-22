@@ -1,7 +1,7 @@
 {
-  "name": "@samchon/backend",
+  "name": "@samchon/bbs-backend",
   "version": "0.0.0",
-  "description": "Backend for ${PROJECT}",
+  "description": "Backend for bbs-backend",
   "scripts": {
     "build": "rimraf bin && ttsc",
     "build:api": "rimraf packages/api/lib && nestia sdk && tsc -p tsconfig.api.json",
@@ -10,12 +10,12 @@
     "package:api": "npm run build:api && cd packages/api && npm publish",
     "package:models": "npm run build:models && cd packags/models && npm publish",
     "reset:dev": "git pull && npm install && npm run build && npm run stop && npm run test -- --mode=dev && npm run start:updator:master && npm run start dev",
-    "start": "pm2 start bin/executable/server.js -i 0 --name ${PROJECT}-backend-server --wait-ready --listen-timeout 120000 --kill-timeout 15000 --",
-    "start:local": "pm2 start bin/executable/server.js -i 2 --name ${PROJECT}-backend-server --wait-ready --listen-timeout 120000 --kill-timeout 15000 -- local",
+    "start": "pm2 start bin/executable/server.js -i 0 --name bbs-backend-backend-server --wait-ready --listen-timeout 120000 --kill-timeout 15000 --",
+    "start:local": "pm2 start bin/executable/server.js -i 2 --name bbs-backend-backend-server --wait-ready --listen-timeout 120000 --kill-timeout 15000 -- local",
     "start:updator:master": "pm2 start --name bbs-backend-updator-master bin/updator/master.js",
     "start:updator:slave": "pm2 start --name bbs-backend-updator-slave bin/updator/slave.js",
-    "start:reload": "pm2 reload ${PROJECT}-backend-server",
-    "stop": "pm2 delete ${PROJECT}-backend-server",
+    "start:reload": "pm2 reload bbs-backend-backend-server",
+    "stop": "pm2 delete bbs-backend-backend-server",
     "stop:updator:master": "pm2 delete bbs-backend-updator-master",
     "stop:updator:slave": "pm2 delete bbs-backend-updator-slave",
     "update": "node bin/executable/update",
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samchon/backend"
+    "url": "https://github.com/samchon/bbs-backend"
   },
-  "author": "${AUTHOR}",
+  "author": "samchon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samchon/backend/issues"
+    "url": "https://github.com/samchon/bbs-backend/issues"
   },
-  "homepage": "https://github.com/samchon/backend",
+  "homepage": "https://github.com/samchon/bbs-backend",
   "devDependencies": {
     "@types/cli": "^0.11.19",
     "@types/express": "^4.17.12",
@@ -43,7 +43,9 @@
     "pm2": "^4.5.6",
     "rimraf": "^3.0.2",
     "sloc": "^0.2.1",
+    "ts-node": "^10.4.0",
     "tslint": "^6.1.3",
+    "ttypescript": "^1.5.12",
     "typescript": "4.4.4",
     "typescript-is": "^0.18.2"
   },

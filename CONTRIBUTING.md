@@ -5,7 +5,7 @@ Thanks for your advise. Before publishing an issue, please check some components
 ### 1. Search for duplicates
 Before publishing an issue, please check whether the duplicated issue exists or not.
 
-  - [Ordinary Issues](https://github.com/samchon/backend/issues)
+  - [Ordinary Issues](https://github.com/samchon/bbs-backend/issues)
 
 ### 2. Did you find a bug?
 When you reporting a bug, then please write about those items:
@@ -52,7 +52,7 @@ When you detect an error, then throw exception such below:
 import { assertType } from "typescript-is";
 import api from "../../../../../../api";
 import { IBbsCustomer } from "../../../../../../api/structures/bbs/actors/IBbsCustomer";
-import { IMember } from "../../../../../../api/structures/members/IMember";
+import { IBbsMember } from "../../../../../../api/structures/members/IBbsMember";
 
 import { Configuration } from "../../../../../../Configuration";
 import { RandomGenerator } from "../../../../../../utils/RandomGenerator";
@@ -81,7 +81,7 @@ export async function test_bbs_customer_join_after_activate
     );
 
     // SAME CITIZEN
-    const member: IMember = await api.functional.bbs.customers.authenticate.join
+    const member: IBbsMember = await api.functional.bbs.customers.authenticate.join
     (
         connection,
         {
