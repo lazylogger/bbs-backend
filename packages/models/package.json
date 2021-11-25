@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/samchon/bbs-backend#readme",
   "dependencies": {
-    "safe-typeorm": "^0.2.4"
+    "safe-typeorm": "^0.2.6"
   }
 }
